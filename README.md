@@ -1,1 +1,1 @@
-# logger
+Simple text file logger
