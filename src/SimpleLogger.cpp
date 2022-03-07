@@ -1,10 +1,10 @@
+#include "../SimpleLogger.hpp"
+#include <iostream>
+#include <memory>
+
 namespace SimpleLogger{
-    unique_ptr<SimpleLogger> SimpleLogger::GetSimpleLogger(){
-        if(instance == nullptr){
-            instance = std::make_unique<SimpleLogger>();
-        }   
-        else{
-            return instance;
-        }
+
+    void SimpleLogger::writeLog(LogLevel level, std::string message){
+        writer->write(level, message);
     }
 }
