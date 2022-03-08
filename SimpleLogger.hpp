@@ -10,12 +10,13 @@
 namespace SimpleLogger{
         class SimpleLogger{
             public:
-                SimpleLogger(std::shared_ptr<LoggerWriter> logWriter) : writer(std::move(logWriter)){};
+                SimpleLogger(std::shared_ptr<LoggerWriter> logWriter, LogLevel minimumLevel = DEBUG) : writer(std::move(logWriter)), logLevel(minimumLevel){};
                 virtual ~SimpleLogger() = default;
                 void writeLog(LogLevel level, std::string message);
             private:
                 SimpleLogger() = delete;
                 std::shared_ptr<LoggerWriter> writer;
+                LogLevel logLevel;
         };
 }
 #endif

@@ -8,7 +8,7 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 #------------------------------------------------------------------------------
-ADD_LIBRARY(SimpleLoggerLib src/ConsoleLoggerWriter.cpp src/SimpleLogger.cpp)
+ADD_LIBRARY(SimpleLoggerLib src/StreamLoggerWriter.cpp src/SimpleLogger.cpp)
 
 ADD_EXECUTABLE(SimpleLogger main.cpp)
 TARGET_LINK_LIBRARIES(SimpleLogger SimpleLoggerLib)

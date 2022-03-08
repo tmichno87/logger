@@ -5,6 +5,7 @@
 namespace SimpleLogger{
 
     void SimpleLogger::writeLog(LogLevel level, std::string message){
-        writer->write(level, message);
+        if(level >= logLevel)
+            writer->write(level, message);
     }
 }

@@ -2,7 +2,8 @@
 #ifndef CONSOLELOGWRITER_HPP
 #define CONSOLELOGWRITER_HPP
 
-#include "LoggerWriter.hpp"
+#include "StreamLoggerWriter.hpp"
+#include <iostream>
 #include <memory>
 #include <string>
 #include <mutex>
@@ -11,14 +12,10 @@
 namespace SimpleLogger{
 
 
-    class ConsoleLoggerWriter : public LoggerWriter{
+    class ConsoleLoggerWriter : public StreamLoggerWriter{
         public:
-            ConsoleLoggerWriter() = default;
+            ConsoleLoggerWriter() : StreamLoggerWriter(std::cout) {};
             virtual ~ConsoleLoggerWriter() = default;
-            virtual void write(LogLevel level, std::string message);
-
-        private:
-            std::mutex logMutex;
     };
 
 }
