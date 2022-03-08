@@ -33,3 +33,5 @@
 
 # Directories
 build
+logger.code-workspace
+.vscode/settings.json
