@@ -1,5 +1,5 @@
 <map id="SimpleLogger::ConsoleLoggerWriter" name="SimpleLogger::ConsoleLoggerWriter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,169,201,211"/>
-<area shape="rect" id="node2" href="$df/d0b/class_simple_logger_1_1_stream_logger_writer.html" title=" " alt="" coords="8,80,199,121"/>
-<area shape="rect" id="node3" href="$dc/d0d/class_simple_logger_1_1_logger_writer.html" title=" " alt="" coords="12,5,195,32"/>
+<area shape="rect" id="node1" title="Class which writes logs to console (std::cout)" alt="" coords="5,169,201,211"/>
+<area shape="rect" id="node2" href="$df/d0b/class_simple_logger_1_1_stream_logger_writer.html" title="Class which is used for logging to streams (implements PIMPL)" alt="" coords="8,80,199,121"/>
+<area shape="rect" id="node3" href="$dc/d0d/class_simple_logger_1_1_logger_writer.html" title="Base class for logger writers which are used to write logs for example to std:cout or a file." alt="" coords="12,5,195,32"/>
 </map>

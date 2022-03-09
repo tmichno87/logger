@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simplelogger_0',['SimpleLogger',['../d8/dcd/class_simple_logger_1_1_simple_logger.html#ac97a932387696ca593282b9c08195005',1,'SimpleLogger::SimpleLogger']]]
+  ['addstream_0',['addStream',['../df/d0b/class_simple_logger_1_1_stream_logger_writer.html#ac8a1321800c69df846ec83dbe66569cf',1,'SimpleLogger::StreamLoggerWriter']]]
 ];

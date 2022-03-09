@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['readme_0',['README',['../d3/dcc/md__r_e_a_d_m_e.html',1,'']]]
+  ['loggerwriter_0',['LoggerWriter',['../dc/d0d/class_simple_logger_1_1_logger_writer.html#a8e4d6e3eb757673592148d1367a6c42c',1,'SimpleLogger::LoggerWriter::LoggerWriter()'],['../dc/d0d/class_simple_logger_1_1_logger_writer.html',1,'SimpleLogger::LoggerWriter']]]
 ];

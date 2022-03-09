@@ -72,23 +72,86 @@ $(function() {
   <div class="headertitle"><div class="title">SimpleLogger::LoggerWriter Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Base class for logger writers which are used to write logs for example to std:cout or a file.  
+ <a href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="../../d1/de1/_logger_writer_8hpp_source.html">LoggerWriter.hpp</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for SimpleLogger::LoggerWriter:</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d5/d5b/class_simple_logger_1_1_logger_writer__inherit__graph.png" border="0" usemap="#a_simple_logger_1_1_logger_writer_inherit__map" alt="Inheritance graph"/></div>
 <map name="a_simple_logger_1_1_logger_writer_inherit__map" id="a_simple_logger_1_1_logger_writer_inherit__map">
-<area shape="rect" title=" " alt="" coords="12,5,195,32"/>
-<area shape="rect" href="../../df/d0b/class_simple_logger_1_1_stream_logger_writer.html" title=" " alt="" coords="8,80,199,121"/>
-<area shape="rect" href="../../d0/d7d/class_simple_logger_1_1_console_logger_writer.html" title=" " alt="" coords="5,169,201,211"/>
+<area shape="rect" title="Base class for logger writers which are used to write logs for example to std:cout or a file." alt="" coords="12,5,195,32"/>
+<area shape="rect" href="../../df/d0b/class_simple_logger_1_1_stream_logger_writer.html" title="Class which is used for logging to streams (implements PIMPL)" alt="" coords="8,80,199,121"/>
+<area shape="rect" href="../../d0/d7d/class_simple_logger_1_1_console_logger_writer.html" title="Class which writes logs to console (std::cout)" alt="" coords="5,169,201,211"/>
 </map>
 <center><span class="legend">[<a href="../../graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4a08d2710fd0fd26a4ea53d8b8e77cf3"><td class="memItemLeft" align="right" valign="top"><a id="a4a08d2710fd0fd26a4ea53d8b8e77cf3" name="a4a08d2710fd0fd26a4ea53d8b8e77cf3"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (LogLevel level, std::string message)=0</td></tr>
+<tr class="memitem:a8e4d6e3eb757673592148d1367a6c42c"><td class="memItemLeft" align="right" valign="top"><a id="a8e4d6e3eb757673592148d1367a6c42c" name="a8e4d6e3eb757673592148d1367a6c42c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LoggerWriter</b> ()=default</td></tr>
+<tr class="memdesc:a8e4d6e3eb757673592148d1367a6c42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Logger Writer object. <br /></td></tr>
+<tr class="separator:a8e4d6e3eb757673592148d1367a6c42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a08d2710fd0fd26a4ea53d8b8e77cf3"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html#a4a08d2710fd0fd26a4ea53d8b8e77cf3">write</a> (LogLevel level, std::string message)=0</td></tr>
+<tr class="memdesc:a4a08d2710fd0fd26a4ea53d8b8e77cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">virtual method for writing logs  <a href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html#a4a08d2710fd0fd26a4ea53d8b8e77cf3">More...</a><br /></td></tr>
 <tr class="separator:a4a08d2710fd0fd26a4ea53d8b8e77cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cc809e22a1ab43dc43c7f2de0e32598"><td class="memItemLeft" align="right" valign="top"><a id="a1cc809e22a1ab43dc43c7f2de0e32598" name="a1cc809e22a1ab43dc43c7f2de0e32598"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~LoggerWriter</b> ()=default</td></tr>
+<tr class="memdesc:a1cc809e22a1ab43dc43c7f2de0e32598"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Logger Writer object. <br /></td></tr>
+<tr class="separator:a1cc809e22a1ab43dc43c7f2de0e32598"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Base class for logger writers which are used to write logs for example to std:cout or a file. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4a08d2710fd0fd26a4ea53d8b8e77cf3" name="a4a08d2710fd0fd26a4ea53d8b8e77cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a08d2710fd0fd26a4ea53d8b8e77cf3">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void SimpleLogger::LoggerWriter::write </td>
+          <td>(</td>
+          <td class="paramtype">LogLevel&#160;</td>
+          <td class="paramname"><em>level</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>message</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>virtual method for writing logs </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>log level </td></tr>
+    <tr><td class="paramname">message</td><td>message </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="../../df/d0b/class_simple_logger_1_1_stream_logger_writer.html#aacea1474aac52a6606ebe8f008f68f7a">SimpleLogger::StreamLoggerWriter</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="../../d1/de1/_logger_writer_8hpp_source.html">LoggerWriter.hpp</a></li>
 </ul>

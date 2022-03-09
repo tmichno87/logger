@@ -1,4 +1,4 @@
 <map id="SimpleLogger::StreamLoggerWriter" name="SimpleLogger::StreamLoggerWriter">
-<area shape="rect" id="node1" title=" " alt="" coords="5,80,196,121"/>
-<area shape="rect" id="node2" href="$dc/d0d/class_simple_logger_1_1_logger_writer.html" title=" " alt="" coords="9,5,192,32"/>
+<area shape="rect" id="node1" title="Class which is used for logging to streams (implements PIMPL)" alt="" coords="5,80,196,121"/>
+<area shape="rect" id="node2" href="$dc/d0d/class_simple_logger_1_1_logger_writer.html" title="Base class for logger writers which are used to write logs for example to std:cout or a file." alt="" coords="9,5,192,32"/>
 </map>

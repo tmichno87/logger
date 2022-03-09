@@ -2,7 +2,17 @@
 \label{class_simple_logger_1_1_stream_logger_writer}\index{SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}}
 
 
-Inheritance diagram for Simple\+Logger\+::Stream\+Logger\+Writer\+:\nopagebreak
+Class which is used for logging to streams (implements PIMPL)  
+
+
+
+
+{\ttfamily \#include $<$Stream\+Logger\+Writer.\+hpp$>$}
+
+
+
+Inheritance diagram for Simple\+Logger\+::Stream\+Logger\+Writer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -11,7 +21,8 @@ Inheritance diagram for Simple\+Logger\+::Stream\+Logger\+Writer\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Simple\+Logger\+::Stream\+Logger\+Writer\+:\nopagebreak
+Collaboration diagram for Simple\+Logger\+::Stream\+Logger\+Writer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -26,17 +37,54 @@ struct \mbox{\hyperlink{struct_simple_logger_1_1_stream_logger_writer_1_1impl}{i
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_acf1ed63b46149e63f835b3bdc7b2a7d6}\label{class_simple_logger_1_1_stream_logger_writer_acf1ed63b46149e63f835b3bdc7b2a7d6}} 
-{\bfseries Stream\+Logger\+Writer} (std\+::ostream \&out)
-\item 
-\mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_ac8a1321800c69df846ec83dbe66569cf}\label{class_simple_logger_1_1_stream_logger_writer_ac8a1321800c69df846ec83dbe66569cf}} 
-void {\bfseries add\+Stream} (std\+::ostream \&out)
-\item 
+\mbox{\hyperlink{class_simple_logger_1_1_stream_logger_writer_acf1ed63b46149e63f835b3bdc7b2a7d6}{Stream\+Logger\+Writer}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em Construct a new Stream Logger Writer object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_ac1180d5cc4d47c137d719f8f25893a4c}\label{class_simple_logger_1_1_stream_logger_writer_ac1180d5cc4d47c137d719f8f25893a4c}} 
+virtual {\bfseries $\sim$\+Stream\+Logger\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Destroy the Stream Logger Writer object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_logger_1_1_stream_logger_writer_ac8a1321800c69df846ec83dbe66569cf}{add\+Stream}} (std\+::ostream \&out)
+\begin{DoxyCompactList}\small\item\em a method for adding stream to the stream vector which is used to write logs \end{DoxyCompactList}\item 
 virtual void \mbox{\hyperlink{class_simple_logger_1_1_stream_logger_writer_aacea1474aac52a6606ebe8f008f68f7a}{write}} (Log\+Level level, std\+::string message) override
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em write method, which writes logs to a vector of streams \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class which is used for logging to streams (implements PIMPL) 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_acf1ed63b46149e63f835b3bdc7b2a7d6}\label{class_simple_logger_1_1_stream_logger_writer_acf1ed63b46149e63f835b3bdc7b2a7d6}} 
+\index{SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}!StreamLoggerWriter@{StreamLoggerWriter}}
+\index{StreamLoggerWriter@{StreamLoggerWriter}!SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{StreamLoggerWriter()}{StreamLoggerWriter()}}
+{\footnotesize\ttfamily Simple\+Logger\+::\+Stream\+Logger\+Writer\+::\+Stream\+Logger\+Writer (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Construct a new Stream Logger Writer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & a stream to which the logs should be written \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_ac8a1321800c69df846ec83dbe66569cf}\label{class_simple_logger_1_1_stream_logger_writer_ac8a1321800c69df846ec83dbe66569cf}} 
+\index{SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}!addStream@{addStream}}
+\index{addStream@{addStream}!SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}}
+\doxysubsubsection{\texorpdfstring{addStream()}{addStream()}}
+{\footnotesize\ttfamily void Simple\+Logger\+::\+Stream\+Logger\+Writer\+::add\+Stream (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out }\end{DoxyParamCaption})}
+
+
+
+a method for adding stream to the stream vector which is used to write logs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_simple_logger_1_1_stream_logger_writer_aacea1474aac52a6606ebe8f008f68f7a}\label{class_simple_logger_1_1_stream_logger_writer_aacea1474aac52a6606ebe8f008f68f7a}} 
 \index{SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}!write@{write}}
 \index{write@{write}!SimpleLogger::StreamLoggerWriter@{SimpleLogger::StreamLoggerWriter}}
@@ -45,7 +93,18 @@ virtual void \mbox{\hyperlink{class_simple_logger_1_1_stream_logger_writer_aacea
 
 
 
-Implements \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Simple\+Logger\+::\+Logger\+Writer}}.
+write method, which writes logs to a vector of streams 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & log level \\
+\hline
+{\em message} & message to write \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_simple_logger_1_1_logger_writer_a4a08d2710fd0fd26a4ea53d8b8e77cf3}{Simple\+Logger\+::\+Logger\+Writer}}.
 
 
 
