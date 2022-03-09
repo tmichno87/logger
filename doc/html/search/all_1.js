@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['impl_0',['impl',['../d8/d53/struct_simple_logger_1_1_stream_logger_writer_1_1impl.html',1,'SimpleLogger::StreamLoggerWriter']]]
+  ['consoleloggerwriter_0',['ConsoleLoggerWriter',['../d0/d7d/class_simple_logger_1_1_console_logger_writer.html#a2497f86d57845fde165b4f736644eb0e',1,'SimpleLogger::ConsoleLoggerWriter::ConsoleLoggerWriter()'],['../d0/d7d/class_simple_logger_1_1_console_logger_writer.html',1,'SimpleLogger::ConsoleLoggerWriter']]]
 ];

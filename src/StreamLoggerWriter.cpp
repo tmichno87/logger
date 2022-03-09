@@ -10,6 +10,10 @@
 
 namespace SimpleLogger
 {
+    /**
+     * @brief StreamLoggerWriter implementation struct
+     * 
+     */
     struct StreamLoggerWriter::impl{
         impl();
         ~impl();
