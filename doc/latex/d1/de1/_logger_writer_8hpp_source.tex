@@ -1,0 +1,23 @@
+\hypertarget{_logger_writer_8hpp_source}{}\doxysection{Logger\+Writer.\+hpp}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#ifndef LOGWRITER\_HPP}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#define LOGWRITER\_HPP}}
+\DoxyCodeLine{4 }
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}LogLevels.hpp"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{namespace }SimpleLogger\{}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10     \textcolor{keyword}{class }\mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{LoggerWriter}}\{}
+\DoxyCodeLine{11         \textcolor{keyword}{public}:}
+\DoxyCodeLine{12             \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{LoggerWriter}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{13             \textcolor{keyword}{virtual} \textcolor{keywordtype}{void} write(LogLevel level, std::string message) = 0;}
+\DoxyCodeLine{14             \textcolor{keyword}{virtual} \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{\string~LoggerWriter}}() = \textcolor{keywordflow}{default};}
+\DoxyCodeLine{15     \};}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \}}
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
