@@ -199,6 +199,26 @@ TEST(SimpleLoggerTests, loggingErrorOk)
     EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
 }
 
+TEST(SimpleLoggerTests, lambdaWorksOk)
+{ 
+    // arrange
+    std::string expectedVal = "TEST - custom log write";
+    std::stringstream ss;
+    std::string result = "";
+    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto logWriteLambda = [&result](SimpleLogger::LogLevel level, std::string message){
+        result = "TEST - "+message;
+    };
+
+    // act
+    logger->writeLog(SimpleLogger::DEBUG, "custom log write", logWriteLambda);
+
+    // assert
+    EXPECT_TRUE(result.compare(expectedVal) == 0);
+}
+
+
 
 int main(int argc, char* argv[])
 {
