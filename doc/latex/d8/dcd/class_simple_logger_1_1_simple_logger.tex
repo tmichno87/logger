@@ -1,0 +1,93 @@
+\hypertarget{class_simple_logger_1_1_simple_logger}{}\doxysection{Simple\+Logger\+::Simple\+Logger Class Reference}
+\label{class_simple_logger_1_1_simple_logger}\index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
+
+
+Main class of Simple Logger.  
+
+
+
+
+{\ttfamily \#include $<$Simple\+Logger.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}{Simple\+Logger}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$ log\+Writer, Log\+Level minimum\+Level=DEBUG)
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a043e0a54b98640350b6c0dc94b1d70d7}\label{class_simple_logger_1_1_simple_logger_a043e0a54b98640350b6c0dc94b1d70d7}} 
+virtual {\bfseries $\sim$\+Simple\+Logger} ()=default
+\begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}{write\+Log}} (Log\+Level level, std\+::string message)
+\begin{DoxyCompactList}\small\item\em method for writing logs (thread safe) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a8d3c02fe7a95ffa5cd44f251f1870b06}{write\+Log}} (Log\+Level level, std\+::string message, std\+::function$<$ void(Log\+Level, std\+::string)$>$ func)
+\begin{DoxyCompactList}\small\item\em custom method for writing logs which uses std\+::function~\newline
+ CAUTION! you have to provide also your own thread safe implementation in the function \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Main class of Simple Logger. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}\label{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}} 
+\index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!SimpleLogger@{SimpleLogger}}
+\index{SimpleLogger@{SimpleLogger}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{SimpleLogger()}{SimpleLogger()}}
+{\footnotesize\ttfamily Simple\+Logger\+::\+Simple\+Logger\+::\+Simple\+Logger (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$}]{log\+Writer,  }\item[{Log\+Level}]{minimum\+Level = {\ttfamily DEBUG} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em log\+Writer} & shared pointer to \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} object, which is used to write logs to e.\+g. file, console, stream \\
+\hline
+{\em minimum\+Level} & sets minium log level \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}\label{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}} 
+\index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!writeLog@{writeLog}}
+\index{writeLog@{writeLog}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{writeLog()}{writeLog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Simple\+Logger\+::\+Simple\+Logger\+::write\+Log (\begin{DoxyParamCaption}\item[{Log\+Level}]{level,  }\item[{std\+::string}]{message }\end{DoxyParamCaption})}
+
+
+
+method for writing logs (thread safe) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & log level \\
+\hline
+{\em message} & message to write (e.\+g. debug or an error information) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a8d3c02fe7a95ffa5cd44f251f1870b06}\label{class_simple_logger_1_1_simple_logger_a8d3c02fe7a95ffa5cd44f251f1870b06}} 
+\index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!writeLog@{writeLog}}
+\index{writeLog@{writeLog}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{writeLog()}{writeLog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Simple\+Logger\+::\+Simple\+Logger\+::write\+Log (\begin{DoxyParamCaption}\item[{Log\+Level}]{level,  }\item[{std\+::string}]{message,  }\item[{std\+::function$<$ void(Log\+Level, std\+::string)$>$}]{func }\end{DoxyParamCaption})}
+
+
+
+custom method for writing logs which uses std\+::function~\newline
+ CAUTION! you have to provide also your own thread safe implementation in the function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em level} & log level \\
+\hline
+{\em message} & message to write (e.\+g. debug or an error information) \\
+\hline
+{\em func} & std\+::function which is used to write logs -\/ it should have Simple\+Logger\+::\+Log\+Level and a std\+::string parameters \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Simple\+Logger.\+hpp\item 
+src/Simple\+Logger.\+cpp\end{DoxyCompactItemize}
