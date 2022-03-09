@@ -8,4 +8,9 @@ namespace SimpleLogger{
         if(level >= logLevel)
             writer->write(level, message);
     }
+
+    void SimpleLogger::writeLog(LogLevel level, std::string message, std::function<void(LogLevel, std::string)> func){
+        if(level >= logLevel)
+            func(level, message);
+    }
 }
