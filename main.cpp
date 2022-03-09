@@ -39,7 +39,4 @@ int main(int, char**) {
     };
 
     logger->writeLog(SimpleLogger::DEBUG, "test custom log write", logWriteLambda);
-
-    
-
 }
