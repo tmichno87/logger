@@ -42,7 +42,7 @@ TEST(StreamLoggerWriterTests, loggingDebugOk)
     auto logInfo = ss.str().substr (38,18);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingInfoOk)
@@ -60,7 +60,7 @@ TEST(StreamLoggerWriterTests, loggingInfoOk)
     auto logInfo = ss.str().substr (38,16);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingWarningOk)
@@ -78,7 +78,7 @@ TEST(StreamLoggerWriterTests, loggingWarningOk)
     auto logInfo = ss.str().substr (38,22);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingErrorOk)
@@ -96,7 +96,7 @@ TEST(StreamLoggerWriterTests, loggingErrorOk)
     auto logInfo = ss.str().substr (38,18);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 //############### SimpleLoggerTests #####################
@@ -139,7 +139,7 @@ TEST(SimpleLoggerTests, loggingDebugOk)
     auto logInfo = ss.str().substr (38,18);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(SimpleLoggerTests, loggingInfoOk)
@@ -158,7 +158,7 @@ TEST(SimpleLoggerTests, loggingInfoOk)
     auto logInfo = ss.str().substr (38,16);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(SimpleLoggerTests, loggingWarningOk)
@@ -177,7 +177,7 @@ TEST(SimpleLoggerTests, loggingWarningOk)
     auto logInfo = ss.str().substr (38,22);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(SimpleLoggerTests, loggingErrorOk)
@@ -196,7 +196,7 @@ TEST(SimpleLoggerTests, loggingErrorOk)
     auto logInfo = ss.str().substr (38,18);
 
     // assert
-    EXPECT_TRUE(logInfo.compare(expectedVal) == 0);
+    ASSERT_EQ(logInfo, expectedVal);
 }
 
 TEST(SimpleLoggerTests, lambdaWorksOk)
