@@ -30,81 +30,66 @@ TEST(StreamLoggerWriterTests, createStreamNotThrowingExceptions)
 TEST(StreamLoggerWriterTests, loggingDebugOk)
 { 
     // arrange
-    std::string expectedVal = "[DEBUG] Test DEBUG";
+    std::string expectedVal = "[DEBUG] Test DEBUG\n";
     std::stringstream ss;
     auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
 
     // act
-    streamWriter->write(SimpleLogger::DEBUG, "Test DEBUG");
-    // should return something like that:
-    // TIME: #THREAD_ID [DEBUG] Test DEBUG
-    // we should check only the last part:
-    auto logInfo = ss.str().substr (38,18);
+    streamWriter->write("[DEBUG] Test DEBUG");
 
     // assert
-    ASSERT_EQ(logInfo, expectedVal);
+    auto val = ss.str();
+    ASSERT_EQ(val, expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingInfoOk)
 { 
     // arrange
-    std::string expectedVal = "[INFO] Test INFO";
+    std::string expectedVal = "[INFO] Test INFO\n";
     std::stringstream ss;
     auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
 
     // act
-    streamWriter->write(SimpleLogger::INFO, "Test INFO");
-    // should return something like that:
-    // TIME: #THREAD_ID [DEBUG] Test DEBUG
-    // we should check only the last part:
-    auto logInfo = ss.str().substr (38,16);
+    streamWriter->write("[INFO] Test INFO");
 
     // assert
-    ASSERT_EQ(logInfo, expectedVal);
+    ASSERT_EQ(ss.str(), expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingWarningOk)
 { 
     // arrange
-    std::string expectedVal = "[WARNING] Test WARNING";
+    std::string expectedVal = "[WARNING] Test WARNING\n";
     std::stringstream ss;
     auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
 
     // act
-    streamWriter->write(SimpleLogger::WARNING, "Test WARNING");
-    // should return something like that:
-    // TIME: #THREAD_ID [DEBUG] Test DEBUG
-    // we should check only the last part:
-    auto logInfo = ss.str().substr (38,22);
+    streamWriter->write("[WARNING] Test WARNING");
 
     // assert
-    ASSERT_EQ(logInfo, expectedVal);
+    ASSERT_EQ(ss.str(), expectedVal);
 }
 
 TEST(StreamLoggerWriterTests, loggingErrorOk)
 { 
     // arrange
-    std::string expectedVal = "[ERROR] Test ERROR";
+    std::string expectedVal = "[ERROR] Test ERROR\n";
     std::stringstream ss;
     auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
 
     // act
-    streamWriter->write(SimpleLogger::ERROR, "Test ERROR");
-    // should return something like that:
-    // TIME: #THREAD_ID [DEBUG] Test DEBUG
-    // we should check only the last part:
-    auto logInfo = ss.str().substr (38,18);
+    streamWriter->write("[ERROR] Test ERROR");
 
     // assert
-    ASSERT_EQ(logInfo, expectedVal);
+    ASSERT_EQ(ss.str(), expectedVal);
 }
 
 //############### SimpleLoggerTests #####################
 TEST(SimpleLoggerTests, createConsleNotThrowingExceptions)
 { 
     try {
-        auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(std::cout); 
-        auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+        auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(std::cout); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
     }
     catch(...) {
         FAIL() << "Expected not to throw exception";
@@ -115,8 +100,8 @@ TEST(SimpleLoggerTests, createStreamNotThrowingExceptions)
 { 
     try {
         std::stringstream ss;
-        auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
-        auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+        auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
     }
     catch(...) {
         FAIL() << "Expected not to throw exception";
@@ -128,8 +113,8 @@ TEST(SimpleLoggerTests, loggingDebugOk)
     // arrange
     std::string expectedVal = "[DEBUG] Test DEBUG";
     std::stringstream ss;
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
 
     // act
     logger->writeLog(SimpleLogger::DEBUG, "Test DEBUG");
@@ -147,8 +132,8 @@ TEST(SimpleLoggerTests, loggingInfoOk)
     // arrange
     std::string expectedVal = "[INFO] Test INFO";
     std::stringstream ss;
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss);
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter); 
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss);
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter)); 
 
     // act
     logger->writeLog(SimpleLogger::INFO, "Test INFO");
@@ -166,8 +151,8 @@ TEST(SimpleLoggerTests, loggingWarningOk)
     // arrange
     std::string expectedVal = "[WARNING] Test WARNING";
     std::stringstream ss;
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
 
     // act
     logger->writeLog(SimpleLogger::WARNING, "Test WARNING");
@@ -185,8 +170,8 @@ TEST(SimpleLoggerTests, loggingErrorOk)
     // arrange
     std::string expectedVal = "[ERROR] Test ERROR";
     std::stringstream ss;
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
 
     // act
     logger->writeLog(SimpleLogger::ERROR, "Test ERROR");
@@ -205,8 +190,8 @@ TEST(SimpleLoggerTests, lambdaWorksOk)
     std::string expectedVal = "TEST - custom log write";
     std::stringstream ss;
     std::string result = "";
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(ss); 
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
     auto logWriteLambda = [&result](SimpleLogger::LogLevel level, std::string message){
         result = "TEST - "+message;
     };

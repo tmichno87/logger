@@ -20,7 +20,7 @@ namespace SimpleLogger{
              * @param level log level
              * @param message message
              */
-            virtual void write(LogLevel level, std::string message) = 0;
+            virtual void write(std::string message) = 0;
             /**
              * @brief Destroy the Logger Writer object
              * 

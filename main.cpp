@@ -6,16 +6,16 @@
 
 int main(int, char**) {
     std::cout << "Simple logger example!\n";
-
+    // create stream writer on a basis of the file
+    auto consoleWriter = std::make_unique<SimpleLogger::ConsoleLoggerWriter>();
     // open file for logs (in this case overwriting is chosen):
     std::ofstream myfile;
     myfile.open ("logs.txt");
     // create stream writer on a basis of the file
-    auto streamWriter = std::make_shared<SimpleLogger::StreamLoggerWriter>(myfile);
-    // add output to console
-    streamWriter->addStream(std::cout);
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(myfile);
     // create logger object
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(streamWriter);
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
+    logger->addLogWriter(std::move(consoleWriter));
 
     // test different types of log levels
     logger->writeLog(SimpleLogger::INFO, "test info");
@@ -39,4 +39,6 @@ int main(int, char**) {
     };
 
     logger->writeLog(SimpleLogger::DEBUG, "test custom log write", logWriteLambda);
+
+    myfile.close();
 }

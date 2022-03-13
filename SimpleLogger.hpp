@@ -17,12 +17,18 @@ namespace SimpleLogger{
             public:
                 /**
                  * Constructor
-                 * @param logWriter shared pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
                  * @param minimumLevel sets minium log level
+                 * @param logWriter shared pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
                  */
-                SimpleLogger(std::shared_ptr<LoggerWriter> logWriter, LogLevel minimumLevel = DEBUG) : writer(std::move(logWriter)), logLevel(minimumLevel){};
+                SimpleLogger(LogLevel minimumLevel, std::unique_ptr<LoggerWriter> logWriter);
+                /**
+                 * @brief a method for adding stream to the stream vector which is used to write logs
+                 * 
+                 * @param out 
+                 */
+                void addLogWriter(std::unique_ptr<LoggerWriter> logWriter);
                 /// Default destructor
-                virtual ~SimpleLogger() = default;
+                virtual ~SimpleLogger();
                 /**
                  * method for writing logs (thread safe)
                  * @param level log level
@@ -39,8 +45,11 @@ namespace SimpleLogger{
                 void writeLog(LogLevel level, std::string message, std::function<void(LogLevel, std::string)> func);
             private:
                 SimpleLogger() = delete;
-                std::shared_ptr<LoggerWriter> writer;
-                LogLevel logLevel;
+                SimpleLogger(const SimpleLogger&) = delete;
+                SimpleLogger& operator=(const SimpleLogger&) = delete;
+                
+                struct impl;
+                std::unique_ptr<impl> pimpl;
         };
 }
 #endif

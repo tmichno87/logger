@@ -31,10 +31,9 @@ namespace SimpleLogger{
             /**
              * @brief write method, which writes logs to a vector of streams
              * 
-             * @param level log level
              * @param message message to write
              */
-            virtual void write(LogLevel level, std::string message) override;
+            virtual void write(std::string message) override;
         private:
             /// struct which hides implementation
             struct impl;
