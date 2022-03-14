@@ -47,8 +47,9 @@ namespace SimpleLogger{
                 SimpleLogger() = delete;
                 SimpleLogger(const SimpleLogger&) = delete;
                 SimpleLogger& operator=(const SimpleLogger&) = delete;
-                
+                /// struct which hides implementation
                 struct impl;
+                /// pointer to implementation
                 std::unique_ptr<impl> pimpl;
         };
 }

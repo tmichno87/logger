@@ -15,16 +15,19 @@
 \DoxyCodeLine{12 }
 \DoxyCodeLine{16         \textcolor{keyword}{class }\mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}\{}
 \DoxyCodeLine{17             \textcolor{keyword}{public}:}
-\DoxyCodeLine{23                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}{SimpleLogger}}(std::shared\_ptr<LoggerWriter> logWriter, LogLevel minimumLevel = DEBUG) : writer(std::move(logWriter)), logLevel(minimumLevel)\{\};}
-\DoxyCodeLine{25                 \textcolor{keyword}{virtual} \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a043e0a54b98640350b6c0dc94b1d70d7}{\string~SimpleLogger}}() = \textcolor{keywordflow}{default};}
-\DoxyCodeLine{31                 \textcolor{keywordtype}{void} writeLog(LogLevel level, std::string message);}
-\DoxyCodeLine{39                 \textcolor{keywordtype}{void} writeLog(LogLevel level, std::string message, std::function<\textcolor{keywordtype}{void}(LogLevel, std::string)> func);}
-\DoxyCodeLine{40             \textcolor{keyword}{private}:}
-\DoxyCodeLine{41                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}() = \textcolor{keyword}{delete};}
-\DoxyCodeLine{42                 std::shared\_ptr<LoggerWriter> writer;}
-\DoxyCodeLine{43                 LogLevel logLevel;}
-\DoxyCodeLine{44         \};}
-\DoxyCodeLine{45 \}}
-\DoxyCodeLine{46 \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{23                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}(LogLevel minimumLevel, std::unique\_ptr<LoggerWriter> logWriter);}
+\DoxyCodeLine{29                 \textcolor{keywordtype}{void} addLogWriter(std::unique\_ptr<LoggerWriter> logWriter);}
+\DoxyCodeLine{31                 \textcolor{keyword}{virtual} \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{\string~SimpleLogger}}();}
+\DoxyCodeLine{37                 \textcolor{keywordtype}{void} writeLog(LogLevel level, std::string message);}
+\DoxyCodeLine{45                 \textcolor{keywordtype}{void} writeLog(LogLevel level, std::string message, std::function<\textcolor{keywordtype}{void}(LogLevel, std::string)> func);}
+\DoxyCodeLine{46             \textcolor{keyword}{private}:}
+\DoxyCodeLine{47                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{48                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}(\textcolor{keyword}{const} \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{49                 \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}\& operator=(\textcolor{keyword}{const} \mbox{\hyperlink{class_simple_logger_1_1_simple_logger}{SimpleLogger}}\&) = \textcolor{keyword}{delete};}
+\DoxyCodeLine{51                 \textcolor{keyword}{struct }\mbox{\hyperlink{struct_simple_logger_1_1_simple_logger_1_1impl}{impl}};}
+\DoxyCodeLine{53                 std::unique\_ptr<impl> pimpl;}
+\DoxyCodeLine{54         \};}
+\DoxyCodeLine{55 \}}
+\DoxyCodeLine{56 \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

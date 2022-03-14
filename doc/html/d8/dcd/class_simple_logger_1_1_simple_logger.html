@@ -67,6 +67,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="../../d6/d3f/class_simple_logger_1_1_simple_logger-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">SimpleLogger::SimpleLogger Class Reference</div></div>
@@ -78,15 +79,23 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="../../da/dd3/_simple_logger_8hpp_source.html">SimpleLogger.hpp</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/da3/struct_simple_logger_1_1_simple_logger_1_1impl.html">impl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac97a932387696ca593282b9c08195005"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#ac97a932387696ca593282b9c08195005">SimpleLogger</a> (std::shared_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt; logWriter, LogLevel minimumLevel=DEBUG)</td></tr>
-<tr class="memdesc:ac97a932387696ca593282b9c08195005"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#ac97a932387696ca593282b9c08195005">More...</a><br /></td></tr>
-<tr class="separator:ac97a932387696ca593282b9c08195005"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a043e0a54b98640350b6c0dc94b1d70d7"><td class="memItemLeft" align="right" valign="top"><a id="a043e0a54b98640350b6c0dc94b1d70d7" name="a043e0a54b98640350b6c0dc94b1d70d7"></a>
-virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SimpleLogger</b> ()=default</td></tr>
-<tr class="memdesc:a043e0a54b98640350b6c0dc94b1d70d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
-<tr class="separator:a043e0a54b98640350b6c0dc94b1d70d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427a9e836f331cabc6b61b68610a845a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#a427a9e836f331cabc6b61b68610a845a">SimpleLogger</a> (LogLevel minimumLevel, std::unique_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt; logWriter)</td></tr>
+<tr class="memdesc:a427a9e836f331cabc6b61b68610a845a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#a427a9e836f331cabc6b61b68610a845a">More...</a><br /></td></tr>
+<tr class="separator:a427a9e836f331cabc6b61b68610a845a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55da136f3c4fc0d456ad3e8310cc904"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#af55da136f3c4fc0d456ad3e8310cc904">addLogWriter</a> (std::unique_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt; logWriter)</td></tr>
+<tr class="memdesc:af55da136f3c4fc0d456ad3e8310cc904"><td class="mdescLeft">&#160;</td><td class="mdescRight">a method for adding stream to the stream vector which is used to write logs  <a href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#af55da136f3c4fc0d456ad3e8310cc904">More...</a><br /></td></tr>
+<tr class="separator:af55da136f3c4fc0d456ad3e8310cc904"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a81298d0d4be9b31e9df47c273264bc49"><td class="memItemLeft" align="right" valign="top"><a id="a81298d0d4be9b31e9df47c273264bc49" name="a81298d0d4be9b31e9df47c273264bc49"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SimpleLogger</b> ()</td></tr>
+<tr class="memdesc:a81298d0d4be9b31e9df47c273264bc49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default destructor. <br /></td></tr>
+<tr class="separator:a81298d0d4be9b31e9df47c273264bc49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f3b722406a9d3fb5e046060482fdcbe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#a2f3b722406a9d3fb5e046060482fdcbe">writeLog</a> (LogLevel level, std::string message)</td></tr>
 <tr class="memdesc:a2f3b722406a9d3fb5e046060482fdcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">method for writing logs (thread safe)  <a href="../../d8/dcd/class_simple_logger_1_1_simple_logger.html#a2f3b722406a9d3fb5e046060482fdcbe">More...</a><br /></td></tr>
 <tr class="separator:a2f3b722406a9d3fb5e046060482fdcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -98,26 +107,23 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SimpleLogger</b> 
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Main class of Simple Logger. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac97a932387696ca593282b9c08195005" name="ac97a932387696ca593282b9c08195005"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac97a932387696ca593282b9c08195005">&#9670;&nbsp;</a></span>SimpleLogger()</h2>
+<a id="a427a9e836f331cabc6b61b68610a845a" name="a427a9e836f331cabc6b61b68610a845a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a427a9e836f331cabc6b61b68610a845a">&#9670;&nbsp;</a></span>SimpleLogger()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SimpleLogger::SimpleLogger::SimpleLogger </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt;&#160;</td>
-          <td class="paramname"><em>logWriter</em>, </td>
+          <td class="paramtype">LogLevel&#160;</td>
+          <td class="paramname"><em>minimumLevel</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">LogLevel&#160;</td>
-          <td class="paramname"><em>minimumLevel</em> = <code>DEBUG</code>&#160;</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt;&#160;</td>
+          <td class="paramname"><em>logWriter</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -125,18 +131,13 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SimpleLogger</b> 
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">logWriter</td><td>shared pointer to <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html" title="Base class for logger writers which are used to write logs for example to std:cout or a file.">LoggerWriter</a> object, which is used to write logs to e.g. file, console, stream </td></tr>
     <tr><td class="paramname">minimumLevel</td><td>sets minium log level </td></tr>
+    <tr><td class="paramname">logWriter</td><td>shared pointer to <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html" title="Base class for logger writers which are used to write logs for example to std:cout or a file.">LoggerWriter</a> object, which is used to write logs to e.g. file, console, stream </td></tr>
   </table>
   </dd>
 </dl>
@@ -144,6 +145,32 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~SimpleLogger</b> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af55da136f3c4fc0d456ad3e8310cc904" name="af55da136f3c4fc0d456ad3e8310cc904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55da136f3c4fc0d456ad3e8310cc904">&#9670;&nbsp;</a></span>addLogWriter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SimpleLogger::SimpleLogger::addLogWriter </td>
+          <td>(</td>
+          <td class="paramtype">std::unique_ptr&lt; <a class="el" href="../../dc/d0d/class_simple_logger_1_1_logger_writer.html">LoggerWriter</a> &gt;&#160;</td>
+          <td class="paramname"><em>logWriter</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>a method for adding stream to the stream vector which is used to write logs </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a2f3b722406a9d3fb5e046060482fdcbe" name="a2f3b722406a9d3fb5e046060482fdcbe"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2f3b722406a9d3fb5e046060482fdcbe">&#9670;&nbsp;</a></span>writeLog() <span class="overload">[1/2]</span></h2>
 

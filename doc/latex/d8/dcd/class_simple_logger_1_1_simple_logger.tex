@@ -9,13 +9,20 @@ Main class of Simple Logger.
 
 {\ttfamily \#include $<$Simple\+Logger.\+hpp$>$}
 
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_simple_logger_1_1_simple_logger_1_1impl}{impl}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}{Simple\+Logger}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$ log\+Writer, Log\+Level minimum\+Level=DEBUG)
+\mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a427a9e836f331cabc6b61b68610a845a}{Simple\+Logger}} (Log\+Level minimum\+Level, std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$ log\+Writer)
 \begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a043e0a54b98640350b6c0dc94b1d70d7}\label{class_simple_logger_1_1_simple_logger_a043e0a54b98640350b6c0dc94b1d70d7}} 
-virtual {\bfseries $\sim$\+Simple\+Logger} ()=default
+void \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_af55da136f3c4fc0d456ad3e8310cc904}{add\+Log\+Writer}} (std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$ log\+Writer)
+\begin{DoxyCompactList}\small\item\em a method for adding stream to the stream vector which is used to write logs \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a81298d0d4be9b31e9df47c273264bc49}\label{class_simple_logger_1_1_simple_logger_a81298d0d4be9b31e9df47c273264bc49}} 
+virtual {\bfseries $\sim$\+Simple\+Logger} ()
 \begin{DoxyCompactList}\small\item\em Default destructor. \end{DoxyCompactList}\item 
 void \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}{write\+Log}} (Log\+Level level, std\+::string message)
 \begin{DoxyCompactList}\small\item\em method for writing logs (thread safe) \end{DoxyCompactList}\item 
@@ -28,11 +35,11 @@ void \mbox{\hyperlink{class_simple_logger_1_1_simple_logger_a8d3c02fe7a95ffa5cd4
 Main class of Simple Logger. 
 
 \doxysubsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}\label{class_simple_logger_1_1_simple_logger_ac97a932387696ca593282b9c08195005}} 
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a427a9e836f331cabc6b61b68610a845a}\label{class_simple_logger_1_1_simple_logger_a427a9e836f331cabc6b61b68610a845a}} 
 \index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!SimpleLogger@{SimpleLogger}}
 \index{SimpleLogger@{SimpleLogger}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
 \doxysubsubsection{\texorpdfstring{SimpleLogger()}{SimpleLogger()}}
-{\footnotesize\ttfamily Simple\+Logger\+::\+Simple\+Logger\+::\+Simple\+Logger (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$}]{log\+Writer,  }\item[{Log\+Level}]{minimum\+Level = {\ttfamily DEBUG} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily Simple\+Logger\+::\+Simple\+Logger\+::\+Simple\+Logger (\begin{DoxyParamCaption}\item[{Log\+Level}]{minimum\+Level,  }\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$}]{log\+Writer }\end{DoxyParamCaption})}
 
 
 
@@ -40,14 +47,29 @@ Constructor.
 
 
 \begin{DoxyParams}{Parameters}
-{\em log\+Writer} & shared pointer to \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} object, which is used to write logs to e.\+g. file, console, stream \\
-\hline
 {\em minimum\+Level} & sets minium log level \\
+\hline
+{\em log\+Writer} & shared pointer to \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} object, which is used to write logs to e.\+g. file, console, stream \\
 \hline
 \end{DoxyParams}
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_af55da136f3c4fc0d456ad3e8310cc904}\label{class_simple_logger_1_1_simple_logger_af55da136f3c4fc0d456ad3e8310cc904}} 
+\index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!addLogWriter@{addLogWriter}}
+\index{addLogWriter@{addLogWriter}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
+\doxysubsubsection{\texorpdfstring{addLogWriter()}{addLogWriter()}}
+{\footnotesize\ttfamily void Simple\+Logger\+::\+Simple\+Logger\+::add\+Log\+Writer (\begin{DoxyParamCaption}\item[{std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{class_simple_logger_1_1_logger_writer}{Logger\+Writer}} $>$}]{log\+Writer }\end{DoxyParamCaption})}
+
+
+
+a method for adding stream to the stream vector which is used to write logs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em out} & \\
+\hline
+\end{DoxyParams}
 \mbox{\Hypertarget{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}\label{class_simple_logger_1_1_simple_logger_a2f3b722406a9d3fb5e046060482fdcbe}} 
 \index{SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}!writeLog@{writeLog}}
 \index{writeLog@{writeLog}!SimpleLogger::SimpleLogger@{SimpleLogger::SimpleLogger}}
