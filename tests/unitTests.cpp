@@ -203,7 +203,32 @@ TEST(SimpleLoggerTests, lambdaWorksOk)
     EXPECT_TRUE(result.compare(expectedVal) == 0);
 }
 
+TEST(SimpleLoggerTests, multipleWritersOk)
+{ 
+    // arrange
+    std::string expectedVal = "[ERROR] Test ERROR";
+    std::stringstream ss1;
+    std::stringstream ss2;
+    std::stringstream ss3;
+    auto streamWriter1 = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss1); 
+    auto streamWriter2 = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss2); 
+    auto streamWriter3 = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss3); 
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter1), std::move(streamWriter2), std::move(streamWriter3));
 
+    // act
+    logger->writeLog(SimpleLogger::ERROR, "Test ERROR");
+    // should return something like that:
+    // TIME: #THREAD_ID [DEBUG] Test DEBUG
+    // we should check only the last part:
+    auto logInfo1 = ss1.str().substr (38,18);
+    auto logInfo2 = ss2.str().substr (38,18);
+    auto logInfo3 = ss3.str().substr (38,18);
+
+    // assert
+    ASSERT_EQ(logInfo1, expectedVal);
+    ASSERT_EQ(logInfo2, expectedVal);
+    ASSERT_EQ(logInfo3, expectedVal);
+}
 
 int main(int argc, char* argv[])
 {

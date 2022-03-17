@@ -50,6 +50,9 @@ namespace SimpleLogger{
         pimpl->logWriters.push_back(std::move(logWriter));
     }
 
+    void SimpleLogger::addLogWriters(std::vector<std::unique_ptr<LoggerWriter>>& vecLogWriters){
+        std::move(vecLogWriters.begin(), vecLogWriters.end(), std::back_inserter(pimpl->logWriters));
+    }
 
     SimpleLogger::~SimpleLogger(){}
 

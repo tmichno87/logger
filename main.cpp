@@ -14,8 +14,8 @@ int main(int, char**) {
     // create stream writer on a basis of the file
     auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(myfile);
     // create logger object
-    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter));
-    logger->addLogWriter(std::move(consoleWriter));
+    auto logger = std::make_unique<SimpleLogger::SimpleLogger>(SimpleLogger::DEBUG, std::move(streamWriter), std::move(consoleWriter));
+    //logger->addLogWriter(std::move(consoleWriter));
 
     // test different types of log levels
     logger->writeLog(SimpleLogger::INFO, "test info");
