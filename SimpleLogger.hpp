@@ -7,9 +7,13 @@
 #include <memory>
 #include <functional>
 
-
 namespace SimpleLogger{
-
+    template<class... Args>
+        concept AllSame = 
+        sizeof...(Args) < 2 ||
+        std::conjunction_v<
+            std::is_same<std::tuple_element_t<0, std::tuple<Args...>>, Args>...
+        >;
         /**
          * Main class of Simple Logger
          */
@@ -18,15 +22,37 @@ namespace SimpleLogger{
                 /**
                  * Constructor
                  * @param minimumLevel sets minium log level
-                 * @param logWriter shared pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
+                 * @param logWriter unique pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
                  */
                 SimpleLogger(LogLevel minimumLevel, std::unique_ptr<LoggerWriter> logWriter);
+                /**
+                 * @brief Construct a new Simple Logger object using a variadic number of log writers (at least one)
+                 * 
+                 * @tparam Args 
+                 * @param minimumLevel sets minium log level
+                 * @param logWriter unique pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
+                 * @param args variadic number of parameters of type: unique pointer to LoggerWriter object, which is used to write logs to e.g. file, console, stream
+                 */
+                template <class ... Args> requires AllSame<Args...>
+                SimpleLogger(LogLevel minimumLevel, std::unique_ptr<LoggerWriter> logWriter, Args ... args) : SimpleLogger(minimumLevel, std::move(logWriter))
+                {
+                   std::vector<std::unique_ptr<LoggerWriter>> tmpVec;
+                   ((tmpVec.push_back(std::move(args))), ...);
+                   addLogWriters(tmpVec);
+                }
+
                 /**
                  * @brief a method for adding stream to the stream vector which is used to write logs
                  * 
                  * @param out 
                  */
                 void addLogWriter(std::unique_ptr<LoggerWriter> logWriter);
+                /**
+                 * @brief a method for adding streams to the stream vector which is used to write logs
+                 * 
+                 * @param out 
+                 */
+                void addLogWriters(std::vector<std::unique_ptr<LoggerWriter>>& vecLogWriters);
                 /// Default destructor
                 virtual ~SimpleLogger();
                 /**
