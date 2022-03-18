@@ -2,18 +2,13 @@
 #ifndef SIMPLELOGGER_HPP
 #define SIMPLELOGGER_HPP
 
+#include "Common.hpp"
 #include "LogLevels.hpp"
 #include "LoggerWriter.hpp"
 #include <memory>
 #include <functional>
 
 namespace SimpleLogger{
-    template<class... Args>
-        concept AllSame = 
-        sizeof...(Args) < 2 ||
-        std::conjunction_v<
-            std::is_same<std::tuple_element_t<0, std::tuple<Args...>>, Args>...
-        >;
         /**
          * Main class of Simple Logger
          */

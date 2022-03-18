@@ -36,6 +36,10 @@ namespace SimpleLogger
         pImpl->outputs.emplace_back(out);
     }
 
+    void StreamLoggerWriter::addStreams(std::vector<std::reference_wrapper<std::ostream>>& outs){
+        std::move(outs.begin(), outs.end(), std::back_inserter(pImpl->outputs));
+    }
+
     void StreamLoggerWriter::write(std::string message){
          for(std::ostream& out : pImpl->outputs){
             out<<message<<std::endl;

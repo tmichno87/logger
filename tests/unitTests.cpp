@@ -84,6 +84,30 @@ TEST(StreamLoggerWriterTests, loggingErrorOk)
     ASSERT_EQ(ss.str(), expectedVal);
 }
 
+TEST(StreamLoggerWriterTests, multipleWritersOk)
+{ 
+    // arrange
+    std::string expectedVal = "[ERROR] Test ERROR\n";
+    std::stringstream ss1;
+    std::stringstream ss2;
+    std::stringstream ss3; 
+    auto streamWriter = std::make_unique<SimpleLogger::StreamLoggerWriter>(ss1, ss2, ss3);
+
+    // act
+    streamWriter->write("[ERROR] Test ERROR");
+    // should return something like that:
+    // TIME: #THREAD_ID [DEBUG] Test DEBUG
+    // we should check only the last part:
+    auto logInfo1 = ss1.str();
+    auto logInfo2 = ss2.str();
+    auto logInfo3 = ss3.str();
+
+    // assert
+    ASSERT_EQ(logInfo1, expectedVal);
+    ASSERT_EQ(logInfo2, expectedVal);
+    ASSERT_EQ(logInfo3, expectedVal);
+}
+
 //############### SimpleLoggerTests #####################
 TEST(SimpleLoggerTests, createConsleNotThrowingExceptions)
 { 
